@@ -1,9 +1,14 @@
 
-import './App.css';
+import {useSelector} from 'react-redux'
+import Login from './Views/Login/Login'
+
 
 function App() {
+  const {auth} = useSelector(state => state)
   return (
-   <h1>Bug-Tracker!</h1>
+    <>
+   {!auth.LoggedIn ? <Login/> : <h1>Hello!</h1>}
+    </>
   );
 }
 
