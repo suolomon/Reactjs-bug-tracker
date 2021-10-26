@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-// import PriorityController from '../../Controllers/priorityController'
+
 
 const SideCard = styled.div`
 background-color: #bdb7c0;
@@ -19,7 +19,6 @@ padding-top: 30px;
 cursor: pointer;
 `
 const SideText2 = styled.h2`
-/* padding-top: 10px; */
 cursor: pointer;
 border-bottom: 1px solid black;
 &:hover{
