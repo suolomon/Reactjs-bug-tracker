@@ -1,14 +1,27 @@
-
-import {useSelector} from 'react-redux'
-import Login from './Views/Login/Login'
-
+import { useSelector } from "react-redux";
+import Login from "./Views/Login/Login";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import ViewPage from "./Views/pages/viewBugs";
+import Sidebar from "./Views/sidebar/sidebar";
 
 function App() {
-  const {auth} = useSelector(state => state)
+  const { auth } = useSelector((state) => state);
   return (
-    <>
-   {!auth.LoggedIn ? <Login/> : <h1>Hello!</h1>}
-    </>
+    <Router>
+      {!auth.LoggedIn ? (
+        <Login />
+      ) : (
+        <>
+           <Sidebar/>
+           <Switch>
+
+          <Route path="/viewbugs">
+            <ViewPage />
+            </Route>
+           </Switch>
+        </>
+      )}
+    </Router>
   );
 }
 
